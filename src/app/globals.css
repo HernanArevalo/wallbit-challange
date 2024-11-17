@@ -11,11 +11,25 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --blue: #476074;
+    --beige: #b09f79; 
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+html {
+  --s: 92px;
+  --c1: var(--beige);
+  --c2: var(--blue);
+  
+  --_g: #0000 83%,var(--c1) 85% 99%,#0000 101%;
+  background:
+    radial-gradient(27% 29% at right ,var(--_g)) calc(var(--s)/ 2) var(--s),
+    radial-gradient(27% 29% at left  ,var(--_g)) calc(var(--s)/-2) var(--s),
+    radial-gradient(29% 27% at top   ,var(--_g)) 0 calc(var(--s)/ 2),
+    radial-gradient(29% 27% at bottom,var(--_g)) 0 calc(var(--s)/-2)
+    var(--c2);
+  background-size: calc(2*var(--s)) calc(2*var(--s));
 }
