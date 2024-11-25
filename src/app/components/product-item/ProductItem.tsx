@@ -12,7 +12,6 @@ interface Props{
 export const ProductItem = ({ product, setDragging, onCart }: Props) => {
   const onDragStart = (e: React.DragEvent) => {
     e.dataTransfer.setData("application/json", JSON.stringify(product));
-    console.log("Dragging:", product.title);
     setDragging(true);
   };
 
@@ -28,10 +27,15 @@ export const ProductItem = ({ product, setDragging, onCart }: Props) => {
       onDragEnd={onDragEnd}
     >
       <div className="product-data">
-        <div className="product-id">id: {product.id}</div>
+        <div className="product-id">ID: {product.id}</div>
         <h3 className="product-title">{product.title}</h3>
-        <div className="product-rate">
-          <FaStar /> {product.rating.rate}
+        <div className="price-rate">
+          <div className="product-price">
+            $ {product.price}
+          </div>
+          <div className="product-rate">
+            <FaStar /> {product.rating.rate}
+          </div>
         </div>
       </div>
       <div className="product-image">

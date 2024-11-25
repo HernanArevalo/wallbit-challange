@@ -4,7 +4,7 @@ import { ProductCart, Product } from '@/app/interfaces';
 
 type Store = {
   cart: ProductCart[];
-  createdAt: Date|null
+  createdAt: Date | null;
   addProduct: (product: Product) => void;
   removeProduct: (id: number) => void;
   addProductQuantity: (productId: number) => void;
@@ -25,10 +25,9 @@ export const useCartStore = create<Store>()(
 
         if (!productInCart) {
           if (cart.length == 0) {
-            set({createdAt: new Date()})
+            set({ createdAt: new Date() });
           }
           set({ cart: [...cart, { ...product, quantity: 1 }] });
-
         } else {
           const updatedCartProducts = cart.map((item) => {
             if (item.id === product.id) {
@@ -41,19 +40,19 @@ export const useCartStore = create<Store>()(
       },
       removeProduct: (id) => {
         const { cart } = get();
-        const updatedCart = cart.filter((prod) => prod.id !== id)
+        const updatedCart = cart.filter((prod) => prod.id !== id);
 
         if (updatedCart.length == 0) {
-          set({createdAt:null})
+          set({ createdAt: null });
         }
-        set({ cart: [...updatedCart ] });
+        set({ cart: [...updatedCart] });
       },
       removeProductQuantity: (productId) => {
         const { cart } = get();
 
         const updatedCartProducts = cart.map((item) => {
           if (item.id === productId && item.quantity > 1) {
-            return { ...item, quantity: item.quantity -1 };
+            return { ...item, quantity: item.quantity - 1 };
           }
           return item;
         });
@@ -65,7 +64,7 @@ export const useCartStore = create<Store>()(
 
         const updatedCartProducts = cart.map((item) => {
           if (item.id === productId) {
-            return { ...item, quantity: item.quantity +1 };
+            return { ...item, quantity: item.quantity + 1 };
           }
           return item;
         });
@@ -73,8 +72,8 @@ export const useCartStore = create<Store>()(
         set({ cart: updatedCartProducts });
       },
       clearCart: () => {
-        set({ cart: [] })
-      }
+        set({ cart: [] });
+      },
     }),
     {
       name: 'products-cart',
