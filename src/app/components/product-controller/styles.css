@@ -1,0 +1,71 @@
+
+.buttons-container{
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  color: var(--blue);
+  gap: 20px;
+
+}
+.delete-btn{
+  width: 100%;
+  background-color: var(--blue);
+  color: var(--beige);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.delete-btn:hover{
+  cursor: pointer;
+  background-color: var(--light-beige);
+}
+.quantity-controller{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50%;
+  box-sizing: border-box;
+  background-color: var(--light-beige);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.quantity-controller > span{
+  background-color: var(--light-beige);
+  color: var(--blue);  
+  width: 30%;
+  padding: 0 15px;
+  height: 100%;
+  outline: none;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity-controller button{
+  background-color: var(--light-beige);
+  height: 100%;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+
+}
+
+.quantity-controller button:first-of-type {
+  border-radius: 5px 0px 0px 5px;
+}
+.quantity-controller button {
+  border-radius: 0px 5px 5px 0px;
+}
+.quantity-controller button:hover {
+  color: var(--beige);
+  background-color: var(--blue);
+}
