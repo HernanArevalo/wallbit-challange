@@ -89,9 +89,6 @@ export default function Home() {
 
           <div
             className="cart-container"
-            onDragOver={(e) => e.preventDefault()}
-            onDrop={onDrop}
-            onDragLeave={() => console.log("El producto salió del área del carrito")}
           >
             <h2 className="title">
               Cart
