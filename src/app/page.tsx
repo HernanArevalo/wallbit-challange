@@ -48,10 +48,7 @@ export default function Home() {
   ]
 
   const { addProduct, cart, createdAt } = useCartStore()
-
-
   const [dragging, setDragging] = useState(false)
-
 
   const onDrop = (e: React.DragEvent) => {
     e.preventDefault();
@@ -59,10 +56,7 @@ export default function Home() {
 
     if (productData) {
       const product = JSON.parse(productData);
-
       addProduct(product)
-
-      console.log("Producto agregado al carrito:", product);
     }
   };
 
