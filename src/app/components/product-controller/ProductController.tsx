@@ -17,7 +17,9 @@ export const ProductController = ({quantity, id}:Props) => {
         <FaTrash size={20} />
       </div>
       <div className="quantity-controller">
-        <button className="" onClick={()=>{removeProductQuantity(id)}}><FaMinusCircle size={24} /></button>
+        <button className="" onClick={()=>{removeProductQuantity(id)}} disabled={quantity == 1}>
+          <FaMinusCircle size={24} color={quantity >1? '476074': 'b09f79'} />
+        </button>
         <span>{quantity}</span>
         <button className="" onClick={()=>{addProductQuantity(id)}}><FaPlusCircle size={24} /></button>
       </div>

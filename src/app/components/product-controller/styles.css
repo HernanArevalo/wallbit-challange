@@ -56,6 +56,7 @@
   justify-content: center;
   align-items: center;
   padding: 5px;
+  transition: color .1s;
 
 }
 
@@ -67,5 +68,4 @@
 }
 .quantity-controller button:hover {
   color: var(--beige);
-  background-color: var(--blue);
 }
