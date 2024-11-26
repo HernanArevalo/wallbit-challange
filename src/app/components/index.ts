@@ -1,4 +1,5 @@
 export * from './divider/Divider'
+export * from './loading-products/LoadingProducts'
 export * from './new-product/NewProduct'
 export * from './product-item/ProductItem'
 export * from './product-controller/ProductController'

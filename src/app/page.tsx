@@ -116,6 +116,9 @@ export default function Home() {
               {(dragging || cart.length == 0) &&
                 <NewProduct />
               }
+              {loading &&
+                <LoadingProducts />
+              }
 
             </div>
 
