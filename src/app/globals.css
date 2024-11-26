@@ -42,9 +42,6 @@ html {
 
 main{
   min-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .div-container{
@@ -53,8 +50,9 @@ main{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: end;
+  align-items: start;
   gap: 20px;
+  padding-top: 150px;
 }
 
 .div-container > div {
@@ -71,21 +69,23 @@ main{
 }
 
 
-.search-container{
+.search-container, .created-at{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 15px;  
   height: 40px;
+  background-color: var(--light-beige);
+  border-radius: 5px;
+  padding: 0 15px;
+  color: var(--blue);
 }
 
 .search-container > input{
   background-color: var(--light-beige);
-  border-radius: 5px;
-  padding: 0 15px;
-  height: 100%;
   outline: none;
+  width: 50px;
 }
 
 .search-container > button {
@@ -109,6 +109,7 @@ main{
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 455px;
 }
 
 
@@ -121,6 +122,7 @@ main{
 }
 
 .add-product{
+  width: 100px;
   height: 130px;
   background-color: var(--blue);
   border-radius: 10px;
@@ -136,9 +138,24 @@ main{
   background-color: var(--light-beige);
 }
 
-.created-at{
-  background-color: var(--light-beige);
-  padding: 5px;
-  border-radius: 5px;
-  color: var(--blue);
+.summary{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: var(--blue);
+  padding: 5px 15px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--light-beige);
+}
+
+.summary span{
+  font-weight: 700;
+}
+
+.products-container .product-item:hover{
+  transform: scale(1.05);
+  cursor: pointer;
 }
