@@ -3,6 +3,7 @@ import { Product } from '../../interfaces';
 import Image from 'next/image';
 import { FaStar } from 'react-icons/fa';
 import './styles.css'
+import { currencyFormat } from '@/app/utils';
 
 interface Props{
   product: Product,
@@ -31,7 +32,7 @@ export const ProductItem = ({ product, setDragging, onCart }: Props) => {
         <h3 className="product-title">{product.title}</h3>
         <div className="price-rate">
           <div className="product-price">
-            $ {product.price}
+            {currencyFormat(product.price)}
           </div>
           <div className="product-rate">
             <FaStar /> {product.rating.rate}
@@ -39,7 +40,11 @@ export const ProductItem = ({ product, setDragging, onCart }: Props) => {
         </div>
       </div>
       <div className="product-image">
-        <Image src={product.image} alt={product.title} height={64} width={64} draggable={false} />
+        <Image src={product.image} 
+               alt={product.title} 
+               height={64} 
+               width={64} 
+               draggable={false} />
       </div>
     </div>
   );
