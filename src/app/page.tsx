@@ -1,14 +1,15 @@
 'use client'
 import { useEffect, useState } from 'react';
-import { Divider, LoadingProducts, NewProduct, NoProducts, ProductController, ProductItem } from './components'
-import { Product } from "./interfaces";
+import Image from 'next/image';
 import { MdKeyboardDoubleArrowRight, MdSearch } from 'react-icons/md';
-import { useCartStore } from './store';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
+import { Divider, LoadingProducts, NewProduct, NoProducts, ProductController, ProductItem } from './components'
+import { Product } from './interfaces';
+import { useCartStore } from './store';
 import { currencyFormat } from './utils';
-import { searchProducts } from './service/searchProducts';
-import Image from 'next/image';
+import { searchProducts } from './service';
+
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([])
@@ -32,6 +33,7 @@ export default function Home() {
   useEffect(() => {
     setLoading(false);
     getProductsList()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onSearchProduct = async (e: React.FormEvent) => {
