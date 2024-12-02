@@ -28,8 +28,12 @@ export const ProductItem = ({ product, setDragging, onCart }: Props) => {
       onDragEnd={onDragEnd}
     >
       <div className="product-data">
-        <div className="product-id">ID: {product.id}</div>
-        <h3 className="product-title">{product.title}</h3>
+        <div className="product-id">
+          ID: {product.id}
+        </div>
+        <h3 className="product-title">
+          {product.title}
+        </h3>
         <div className="price-rate">
           <div className="product-price">
             {currencyFormat(product.price)}
