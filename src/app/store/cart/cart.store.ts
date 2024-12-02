@@ -10,6 +10,8 @@ type Store = {
   addProductQuantity: (productId: number) => void;
   removeProductQuantity: (productId: number) => void;
   clearCart: () => void;
+  getTotalItems: () => number;
+  getTotalPrice: () => number;
 };
 
 export const useCartStore = create<Store>()(
@@ -18,6 +20,17 @@ export const useCartStore = create<Store>()(
       cart: [],
       createdAt: null,
 
+      getTotalItems: () => {
+        const { cart } = get();
+
+        return cart.reduce((total, item) => (total += item.quantity), 0);
+      },
+      getTotalPrice: () => {
+        const { cart } = get();
+
+        return cart.reduce(
+          (subtotal, item) => (subtotal += item.price * item.quantity), 0);
+      },
       addProduct: (product) => {
         const { cart } = get();
 
