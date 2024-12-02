@@ -42,8 +42,8 @@ export const ProductItem = ({ product, setDragging, onCart }: Props) => {
       <div className="product-image">
         <Image src={product.image} 
                alt={product.title} 
-               height={64} 
-               width={64} 
+               height={80} 
+               width={80} 
                draggable={false} />
       </div>
     </div>
