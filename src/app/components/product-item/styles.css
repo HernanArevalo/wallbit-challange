@@ -10,32 +10,32 @@
   padding: 10px;
   gap: 20px;
   transition: all .3s;
-  cursor: pointer;
   box-sizing: border-box;
-}
-.product-item:hover{
-  transform: scale(1.05);
 }
 
 .product-title{
   font-size: 18px;
   font-weight: 700;
+  text-align: justify;
+  max-height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .product-image{
-  width: 100px;
   height: 100px;
+  width: fit-content;
   background-color: white;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px 10px;
 }
 
 .product-data{
   width: 100%;
-
 }
 
 .product-data > p{

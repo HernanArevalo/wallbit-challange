@@ -42,32 +42,68 @@ html {
 
 main{
   min-height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+main > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  min-height: 100%;
+  gap: 20px;
+  padding-top: 150px;
+  width: fit-content;
+}
+
+.page-title{
+  background-color: var(--light-beige);
+  color: var(--blue);
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 15px;
+  border: 5px solid var(--beige);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+}
+
+.title-img{
+  background-color: var(--blue);
+  padding: 5px;
+  border-radius: 999px;
+  overflow: hidden;
+  height: 50px;
+  width: 50px;
+  padding-top: 10px;
 }
 
 .div-container{
-  width: 100%;
-  min-height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: start;
   gap: 20px;
-  padding-top: 150px;
 }
 
 .div-container > div {
   background-color: var(--beige);
   padding: 20px;
   border-radius: 15px;
-  border: 2px solid var(--blue);
-
+  border: 5px solid var(--blue);
 }
 
 .title{
   font-weight: 700;
   font-size: 25px;
 }
-
 
 .search-container, .created-at{
   display: flex;
@@ -78,8 +114,14 @@ main{
   height: 40px;
   background-color: var(--light-beige);
   border-radius: 5px;
-  padding: 0 15px;
   color: var(--blue);
+}
+
+.search-container{
+  padding-left: 15px;
+}
+.created-at{
+  padding: 0 15px;
 }
 
 .search-container > input{
@@ -89,14 +131,15 @@ main{
 }
 
 .search-container > button {
-   height: fit-content;
-   background-color: var(--light-beige);
-   border-radius: 10px;
-   height: 100%;
-   width: 40px;
-   display: flex;
-   justify-content: center;
+  height: fit-content;
+  background-color: var(--blue);
+  border-radius: 0 5px 5px 0;
+  height: 100%;
+  width: 40px;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  color: var(--light-beige);
 }
 .divider{
   background-color: var(--light-beige);
